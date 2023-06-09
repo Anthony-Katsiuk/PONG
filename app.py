@@ -26,6 +26,7 @@ P2score1_surface = pygame.image.load('Graphics/0.png').convert()
 P2score2_surface = pygame.image.load('Graphics/0.png').convert()
 
 # Variables
+framerate = int(input("FPS: ")
 player1_score = 0
 player2_score = 0
 
@@ -85,7 +86,7 @@ while True:
         paddle1_velocity = 0
     if paddle1_up is False and paddle1_down is False:
         paddle1_velocity = 0
-    paddle1_pos = paddle1_pos + paddle1_velocity / 2
+    paddle1_pos = paddle1_pos + paddle1_velocity / framerate
 
     # Paddle 2 Movement
     paddle2_velocity = 0
@@ -97,7 +98,7 @@ while True:
         paddle2_velocity = 0
     if paddle2_up is False and paddle2_down is False:
         paddle2_velocity = 0
-    paddle2_pos = paddle2_pos + paddle2_velocity / 2
+    paddle2_pos = paddle2_pos + paddle2_velocity / framerate
 
     #Ball Movement on Paddle 1
     if 15 >= ball_x_pos >= 5 and ball_x_velocity == -5:
@@ -140,8 +141,8 @@ while True:
     if ball_y_velocity < -5:
         ball_y_velocity = -5
 
-    ball_x_pos = ball_x_pos + ball_x_velocity / 2
-    ball_y_pos = ball_y_pos + ball_y_velocity / 2
+    ball_x_pos = ball_x_pos + ball_x_velocity / framerate
+    ball_y_pos = ball_y_pos + ball_y_velocity / framerate
 
     # Rendering
     screen.blit(background_surface, (0, 0))
@@ -157,4 +158,4 @@ while True:
     screen.blit(ball_surface, (ball_x_pos, ball_y_pos))
     # Other Rendering + Clock
     pygame.display.update()
-    clock.tick(120)
+    clock.tick(60*framerate)
