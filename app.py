@@ -157,4 +157,4 @@ while True:
     screen.blit(ball_surface, (ball_x_pos, ball_y_pos))
     # Other Rendering + Clock
     pygame.display.update()
-    clock.tick(0)
+    clock.tick(120)
