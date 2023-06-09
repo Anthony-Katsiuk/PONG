@@ -5,7 +5,7 @@ from sys import exit
 pygame.init()
 screen = pygame.display.set_mode((800, 500))
 pygame.display.set_caption("PONG")
-icon = pygame.image.load('graphics/icon.png')
+icon = pygame.image.load('graphics/pong_icon.png')
 pygame.display.set_icon(icon)
 clock = pygame.time.Clock()
 
